@@ -23,7 +23,9 @@ public class Student {
     private String lastName;
     @Column(name="email_address", nullable = false)
     private String email;
-    private String guardianName;
-    private String guardianEmail;
-    private String guardianMobile;
+
+    @Embedded
+    private Guardian guardian;
+
+
 }
