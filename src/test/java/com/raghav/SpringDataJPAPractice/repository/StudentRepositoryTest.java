@@ -65,4 +65,28 @@ class StudentRepositoryTest {
 
         System.out.println("student = " + student);
     }
+    @Test
+    public void getStudentFirstNameByEmailAddress(){
+        String firstName = studentRepository.getStudentFirstNameByEmailAddress("raghav23@gmail.com");
+
+        System.out.println("firstName = " + firstName);
+    }
+
+    @Test
+    public void getGuardianNameByEmailAddress(){
+        String guardianName = studentRepository.getGuardianNameByEmailAddress("raghav@gmail.com");
+
+        System.out.println("guardianName = " + guardianName);
+    }
+
+    @Test
+    public void updateStudentNameByEmailAddress(){
+        studentRepository.updateStudentNameByEmailAddress("Raghav Kavimandan", "raghav@gmail.com");
+
+    }
+
+    @Test
+    public void deleteStudentByEmailAddress(){
+        studentRepository.deleteStudentByEmailAddress("raghav23@gmail.com");
+    }
 }
