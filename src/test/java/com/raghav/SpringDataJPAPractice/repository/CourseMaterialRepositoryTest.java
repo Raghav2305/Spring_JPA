@@ -17,12 +17,12 @@ class CourseMaterialRepositoryTest {
     @Test
     public void saveCourseMaterial(){
         Course course = Course.builder()
-                .courseTitle("Machine Learning with NLP")
+                .courseTitle("MERN Stack")
                 .courseCredit(10)
                 .build();
 
         CourseMaterial courseMaterial = CourseMaterial.builder()
-                .courseUrl("http://udemy.com/course/nlp")
+                .courseUrl("http://udemy.com/course/mern_stack")
                 .course(course)
                 .build();
 
