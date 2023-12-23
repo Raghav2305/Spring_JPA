@@ -41,7 +41,7 @@ class TeacherRepositoryTest {
         Teacher teacher = Teacher.builder()
                 .firstName("John")
                 .lastName("Smith")
-                .courses(courses)
+//                .courses(courses)
                 .build();
 
         teacherRepository.save(teacher);
