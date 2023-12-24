@@ -1,6 +1,7 @@
 package com.raghav.SpringDataJPAPractice.repository;
 
 import com.raghav.SpringDataJPAPractice.entity.Course;
+import com.raghav.SpringDataJPAPractice.entity.Student;
 import com.raghav.SpringDataJPAPractice.entity.Teacher;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,5 +52,27 @@ class CourseRepositoryTest {
         System.out.println("pages = " + pages);
 
         System.out.println("courses = " + courses);
+    }
+    @Test
+    public void saveCourseWithStudentAndTeacher(){
+        Teacher teacher = Teacher.builder()
+                .firstName("Duncan")
+                .lastName("Idaho")
+                .build();
+
+        Student student = Student.builder()
+                .email("ben_martin@gmail.com")
+                .firstName("Ben")
+                .lastName("Martin")
+                .build();
+
+        Course course = Course.builder()
+                .courseTitle("Docker & Kubernetes")
+                .courseCredit(15)
+                .teacher(teacher)
+                .build();
+
+        course.addStudents(student);
+        courseRepository.save(course);
     }
 }
